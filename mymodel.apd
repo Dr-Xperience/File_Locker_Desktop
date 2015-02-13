@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apdt:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:apdt="http:///org/gnstudio/apdt/model.ecore" release="1.1.0" encoding="UTF-8" author="X" updatedBy="X" created="2013-08-01T06:48:12.570+0530" updated="2013-08-01T07:49:25.397+0530">
+  <programs name="FileLocker">
+    <packages name="com.filelocker.driver">
+      <classes name="TesterClass.java">
+        <description text="1. TesterClass is Used to KickStart the Program&#xD;&#xA;2. It contain main method"/>
+        <link path="/File Locker/src/com/filelocker/driver/TesterClass.java"/>
+        <methods note="">
+          <signature name="main" declaration="STATIC">
+            <returnType name="void"/>
+          </signature>
+        </methods>
+      </classes>
+    </packages>
+    <packages name="com.filelocker.encryption">
+      <classes name="AES_Encryption.java">
+        <description text="The Core Encryption Logic"/>
+        <link path="/File Locker/src/com/filelocker/encryption/AES_Encryption.java"/>
+        <methods note="">
+          <description text="Parametric Constructor which accepts the Password String"/>
+          <signature name="AES_Encryption"/>
+          <arguments>
+            <type name="java.lang.String"/>
+          </arguments>
+        </methods>
+        <methods>
+          <description text="This method is used to Write status over to the standard output"/>
+          <signature name="Db" access="PRIVATE">
+            <returnType name="void"/>
+          </signature>
+          <arguments>
+            <type name="java.lang.String"/>
+          </arguments>
+        </methods>
+        <methods>
+          <signature name="getInitVec" type="GETTER">
+            <returnType name="byte[]"/>
+          </signature>
+        </methods>
+        <methods>
+          <signature name="getSalt" type="GETTER">
+            <returnType name="byte[]"/>
+          </signature>
+        </methods>
+        <methods>
+          <signature name="ReadEncryptedFile">
+            <returnType name="void"/>
+          </signature>
+          <arguments name="infile">
+            <type name="java.io.File"/>
+          </arguments>
+          <arguments name="outFile">
+            <type name="java.io.File"/>
+          </arguments>
+        </methods>
+        <methods>
+          <signature name="setupDecrypt">
+            <returnType name="void"/>
+          </signature>
+          <arguments name="inFile">
+            <type name="java.io.File"/>
+          </arguments>
+        </methods>
+        <methods>
+          <signature name="setupEncrypt">
+            <returnType name="void"/>
+          </signature>
+        </methods>
+        <methods>
+          <signature name="WriteEncryptedFile">
+            <returnType name="void"/>
+          </signature>
+          <arguments>
+            <type name="java.io.File"/>
+          </arguments>
+          <arguments>
+            <type name="java.io.File"/>
+          </arguments>
+        </methods>
+        <members declaration="CONSTANT" name="SALT_LEN">
+          <type name="int"/>
+        </members>
+        <members access="PRIVATE" declaration="FINAL" name="ITERATIONS">
+          <type name="int"/>
+        </members>
+        <members access="PRIVATE" declaration="FINAL" name="KEYLEN_BITS">
+          <type name="int"/>
+        </members>
+        <members access="PRIVATE" declaration="FINAL" name="MAX_FILE_BUF">
+          <type name="int"/>
+        </members>
+        <members note="" access="INTERNAL" name="vDecipher">
+          <type name="javax.crypto.Cipher"/>
+        </members>
+        <members access="INTERNAL" name="vEcipher">
+          <type name="javax.crypto.Cipher"/>
+        </members>
+        <members access="INTERNAL" name="vInitVec">
+          <type name="byte[]"/>
+        </members>
+        <members access="INTERNAL" name="vPassword">
+          <type name="byte[]"/>
+        </members>
+        <members access="INTERNAL" name="vSalt">
+          <type name="byte[]"/>
+        </members>
+      </classes>
+    </packages>
+    <packages name="com.filelocker.gui">
+      <classes name="Events.java" annotation="">
+        <description text="Class Responsible to add Java Widget to frame and implement listeners"/>
+        <extendsElements name="com.filelocker.gui.GUI.java"/>
+        <methods>
+          <signature name="make">
+            <returnType name="void"/>
+          </signature>
+        </methods>
+      </classes>
+      <classes name="GUI.java">
+        <description text="Class Responsible to create Java Widget"/>
+        <methods>
+          <signature name="frameBeg">
+            <returnType name="void"/>
+          </signature>
+          <arguments>
+            <type name="java.lang.String"/>
+          </arguments>
+        </methods>
+        <methods>
+          <signature name="frameEnd">
+            <returnType name="void"/>
+          </signature>
+        </methods>
+        <members access="INTERNAL" name="bigFont">
+          <type name="java.awt.Font"/>
+        </members>
+        <members access="INTERNAL" name="vBrowseButton">
+          <type name="javax.swing.JButton"/>
+        </members>
+        <members access="INTERNAL" name="vBrowseField">
+          <type name="javax.swing.JTextField"/>
+        </members>
+        <members access="INTERNAL" name="vBrowseLabel">
+          <type name="javax.swing.JLabel"/>
+        </members>
+        <members access="INTERNAL" name="vCloseButton">
+          <type name="javax.swing.JButton"/>
+        </members>
+        <members access="INTERNAL" name="vFileChooser">
+          <type name="javax.swing.JFileChooser"/>
+        </members>
+        <members access="INTERNAL" name="vFrame">
+          <type name="javax.swing.JFrame"/>
+        </members>
+        <members access="INTERNAL" name="vLockButton">
+          <type name="javax.swing.JButton"/>
+        </members>
+        <members name="vNotificaitonArea">
+          <type name="javax.swing.JTextArea"/>
+        </members>
+        <members access="INTERNAL" name="vPanel">
+          <type name="javax.swing.JPanel"/>
+        </members>
+        <members access="INTERNAL" name="vPasswordField">
+          <type name="javax.swing.JPasswordField"/>
+        </members>
+        <members access="INTERNAL" name="JPasswordLabel">
+          <type name="javax.swing.JLabel"/>
+        </members>
+        <members access="INTERNAL" name="vScroller">
+          <type name="javax.swing.JScrollPane"/>
+        </members>
+      </classes>
+    </packages>
+  </programs>
+</apdt:Model>
